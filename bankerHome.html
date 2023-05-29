@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Responsive Sidebar Menu  | Client page </title>
-    <link rel="stylesheet" href="client.css">
+    <title> Banker Home Page</title>
+    <link rel="stylesheet" href="./client.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -16,85 +16,64 @@
     </div>
     <ul class="nav-list">
       <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
+        <i class='bx bx-search' ></i>
+       <input type="text" placeholder="Search...">
+       <span class="tooltip">Search</span>
+    </li>
       <li>
-        <a href="./ApplyCredit.html">
-          <i class='bx bx-credit-card'></i>
-          <span class="links_name">Apply for CreditCard</span>
-        </a>
-         <span class="tooltip">Apply for CreditCard</span>
-      </li>
+      <a href="./bankerHome.html">
+        <i class='bx bxs-home'></i>
+        <span class="links_name">Home </span>
+      </a>
+       <span class="tooltip">Go To Home</span>
+    </li>
       <li>
-        <a href="./ApplyLoan.html">
+        <a href="./loans.html">
           <i class='bx bx-money'></i>
-          <span class="links_name">Apply for Loan</span>
+          <span class="links_name">loans </span>
         </a>
-         <span class="tooltip">Apply for Loan</span>
+         <span class="tooltip">Loans to determine</span>
       </li>
       <li>
-        <a href="Credit.html">
-          <i class='bx bxs-wallet-alt'></i>
-          <span class="links_name">CreditCard Actions</span>
-        </a>
-        <span class="tooltip">CreditCard Actions</span>
-      </li>
-      <li>
-        <a href="./Transaction.html">
-          <i class='bx bx-receipt'></i>
-          <span class="links_name">Transactions</span>
-        </a>
-         <span class="tooltip">Transactions</span>
-      </li>
-      <li>
-        <a href="./Transfer.html">
-          <i class='bx bx-transfer-alt'></i>
-          <span class="links_name">Transfer Money</span>
-        </a>
-         <span class="tooltip">Transfer Money</span>
-      </li>
-      <li>
-        <a href="./Report.html">
-          <i class='bx bxs-report'></i>
-          <span class="links_name">Report</span>
-        </a>
-         <span class="tooltip">Report</span>
-      </li>
-      <li>
-        <a href="./Notification.html">
-          <i class='bx bxs-bell'></i>
-          <span class="links_name">Notification</span>
-        </a>
-         <span class="tooltip">Notification</span>
-      </li>
-     <li>
-       <a href="./Reminder.html">
-        <i class='bx bxs-calendar'></i>
-         <span class="links_name">Reminder</span>
+       <a href="./creditcar.html">
+        <i class='bx bx-credit-card' ></i>
+         <span class="links_name">credit cards</span>
        </a>
-       <span class="tooltip">Reminder</span>
+       <span class="tooltip">credit cards to determine</span>
      </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="./img/client.jpg" alt="profileImg">
-           <div class="name_job">
-             <div class="name">Yousef Badr</div>
-             <div class="job">Client</div>
-           </div>
-         </div>
-         <a href="#" id="logout-link">
-          <i class='bx bx-log-out' id="log_out" ></i>
-          <span class="links_name">Logout</span>
-        </a>
-        <span class="tooltip">Logout</span>
+     <li>
+       <a href="./reports.html">
+        <i class='bx bxs-report'></i>
+         <span class="links_name">reports</span>
+       </a>
+       <span class="tooltip">reports</span>
      </li>
-    </ul>
+     <li>
+      <a href="./actions.html">
+        <i class='bx bxs-user-pin'></i>
+        <span class="links_name">Actions</span>
+      </a>
+      <span class="tooltip">Actions</span>
+    </li>
+    <li class="profile">
+        <div class="profile-details">
+          <img src="./img/banker.jpg" alt="profileImg">
+          <div class="name_job">
+            <div class="name">Mohamed Elshekha</div>
+            <div class="job">Banker</div>
+          </div>
+        </div>
+        <a href="#" id="logout-link">
+         <i class='bx bx-log-out' id="log_out" ></i>
+         <span class="links_name">Logout</span>
+       </a>
+       <span class="tooltip">Logout</span>
+    </li>
+   </ul>
   </div>
   <section class="home-section">
     <div class="inbox-container">
-        <h2 class="inbox-title">Inbox</h2>
+        <h2 class="inbox-title">Notification & Announcements</h2>
         <div class="inbox-box">
         <label for="date-filter">Date:</label>
         <select id="date-filter">
@@ -154,7 +133,6 @@
      closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
    }
   }
-
 
   document.getElementById("logout-link").addEventListener("click", function(event) {
     event.preventDefault();
