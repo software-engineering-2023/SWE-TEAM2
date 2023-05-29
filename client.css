@@ -414,3 +414,36 @@ select {
   margin-bottom: 10px;
   list-style-type: none;
 }
+
+
+.payment-options {
+  display: flex;
+  gap: 10px;
+}
+
+.payment-options .option {
+  display: flex;
+  align-items: center;
+}
+
+.payment-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+.redeem-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.redeem-button {
+  margin-top: 10px;
+}
+
+.payment-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+}

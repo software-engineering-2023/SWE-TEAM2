@@ -99,35 +99,67 @@
       <div class="balance">Current Balance: $5000</div>
       <div class="points">Credit Points: 230</div>
     </div>
+  
     <div class="inbox-container">
-        <h1>Redeem Point</h1>
-        <div class="redeem-description">Choose your redemption option:</div>
-        <select id="redeem-options">
-          <option value="cash-back">Cash Back</option>
-          <option value="travel-rewards">Travel Rewards</option>
-          <option value="gift-cards">Gift Cards</option>
-        </select>
-        <label for="redeem-amount">Redeem Amount:</label>
-        <input type="redeem-amount" id="redeem-amount" name="redeem-amount" required>
-
-        <button type="redeem-button">Redeem</button>
-      </div>
-
-      <div class="inbox-container">
-          <h1>Pay Bills</h1>
-          <div class="redeem-description">Choose the bill you want to pay:</div>
-          <select id="bill-options">
-            <option value="gas-bill">Gas Bill</option>
-            <option value="water-bill">Water Bill</option>
-            <option value="electricity-bill">Electricity Bill</option>
-            <option value="telephone-bill">Telephone Bill</option>
-          </select>
-          <input type="text" id="bill-amount" placeholder="Enter the amount to pay">
-          <button class="redeem-button">Pay Now</button>
+      <h1>Redeem Point</h1>
+      <div class="redeem-description">Choose your redemption option:</div>
+      <select id="redeem-options">
+        <option value="cash-back">Cash Back</option>
+        <option value="travel-rewards">Travel Rewards</option>
+        <option value="gift-cards">Gift Cards</option>
+      </select>
+      <label for="redeem-amount">Redeem Amount:</label>
+      <input type="redeem-amount" id="redeem-amount" name="redeem-amount" required>
+      <button type="redeem-button">Redeem</button>
+    </div>
+  
+    <div class="inbox-container">
+      <h1>Bill Payment</h1>
+      <label for="bill-options">Select the bill to pay:</label>
+      <select id="bill-options">
+        <option value="gas-bill">Gas Bill</option>
+        <option value="water-bill">Water Bill</option>
+        <option value="electricity-bill">Electricity Bill</option>
+        <option value="telephone-bill">Telephone Bill</option>
+      </select>
+      <div class="redeem-card">
+        <div class="redeem-description">Choose the payment option:</div>
+        <div class="payment-options">
+          <div class="option">
+            <input type="radio" id="partial-payment" name="payment-option" value="partial-payment">
+            <label for="partial-payment">Partial Payment</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="full-payment" name="payment-option" value="full-payment" checked>
+            <label for="full-payment">Full Payment</label>
+          </div>
         </div>
+        <input type="text" id="bill-amount" placeholder="Enter the amount to pay" style="display: none;">
+        <button class="redeem-button">Pay Now</button>
+      </div>
+    </div>
+  
+    <div class="payment-buttons">
+      <button class="pay-bank-button">Pay through Bank</button>
+      <button class="pay-app-button">Pay through Third Party App</button>
+    </div>
   </section>
   
+  
   <script>
+    const paymentOptions = document.querySelector('.payment-options');
+const amountInput = document.querySelector('#bill-amount');
+
+// Add an event listener to the payment options
+paymentOptions.addEventListener('change', function() {
+  // Check if the partial payment option is selected
+  if (document.getElementById('partial-payment').checked) {
+    amountInput.style.display = 'block'; // Show the input field
+  } else {
+    amountInput.style.display = 'none'; // Hide the input field
+  }
+});
+
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
   let searchBtn = document.querySelector(".bx-search");
