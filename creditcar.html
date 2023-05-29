@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> creditCard Page</title>
+    <link rel="stylesheet" href="./creditcar.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">AMY Bank</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class='bx bx-search' ></i>
+       <input type="text" placeholder="Search...">
+       <span class="tooltip">Search</span>
+    </li>
+      <li>
+      <a href="./bankerHome.html">
+        <i class='bx bxs-home'></i>
+        <span class="links_name">Home </span>
+      </a>
+       <span class="tooltip">Go To Home</span>
+    </li>
+      <li>
+        <a href="./loans.html">
+          <i class='bx bx-money'></i>
+          <span class="links_name">loans </span>
+        </a>
+         <span class="tooltip">Loans to determine</span>
+      </li>
+      <li>
+       <a href="./creditcar.html">
+        <i class='bx bx-credit-card' ></i>
+         <span class="links_name">credit cards</span>
+       </a>
+       <span class="tooltip">credit cards to determine</span>
+     </li>
+     <li>
+       <a href="./reports.html">
+        <i class='bx bxs-report'></i>
+         <span class="links_name">reports</span>
+       </a>
+       <span class="tooltip">reports</span>
+     </li>
+     <li>
+      <a href="./actions.html">
+        <i class='bx bxs-user-pin'></i>
+        <span class="links_name">Actions</span>
+      </a>
+      <span class="tooltip">Actions</span>
+    </li>
+    <li class="profile">
+      <div class="profile-details">
+        <img src="./img/banker.jpg" alt="profileImg">
+        <div class="name_job">
+          <div class="name">Mohamed Elshekha</div>
+          <div class="job">Banker</div>
+        </div>
+      </div>
+      <a href="#" id="logout-link">
+       <i class='bx bx-log-out' id="log_out" ></i>
+       <span class="links_name">Logout</span>
+     </a>
+     <span class="tooltip">Logout</span>
+  </li>
+ </ul>
+</div>
+      <div class="cont">
+        <div class="not">
+          <header>
+            <div class="notheader">
+              <h1>Determine the creditCard Applications</h1>
+              <Span id = " numOfnot "></Span>
+            </div>
+          </header>
+          <main id = "main">
+            <div class="notCard">
+                <p>creditCard Application 1 <Br /></p>
+                <p id = "show">show more info ....</p>
+                <!-- <div class="show">
+                  <p>show more info ....</p>
+                </div> -->
+                <div class="button-wrapper"> 
+                  <button class = "rejectbtn">reject</button>
+                  <button class = "acceptbtn">accept</button>
+                </div>
+              </div>
+              <div class="notCard">
+                <p>creditCard Application 2<Br /></p>
+                <p id = "show">show more info ....</p>
+                <!-- <div class="show">
+                  <p>show more info ....</p>
+                </div> -->
+                <div class="button-wrapper"> 
+                  <button class = "rejectbtn">reject</button>
+                  <button class = "acceptbtn">accept</button>
+                </div>
+                </div>
+              <div class="notCard">
+                <p>creditCard Application 3<Br /></p>
+                <p id = "show">show more info ....</p>
+                <!-- <div class="show">
+                  <p>show more info ....</p>
+                </div> -->
+                <div class="button-wrapper"> 
+                  <button class = "rejectbtn">reject</button>
+                  <button class = "acceptbtn">accept</button>
+                </div>
+                </div>
+              <div class="notCard">
+                <p>creditCard Application 4<Br /></p>
+                <p id = "show">show more info ....</p>
+                <!-- <div class="show">
+                  <p>show more info ....</p>
+                </div> -->
+                <div class="button-wrapper"> 
+                  <button class = "rejectbtn">reject</button>
+                  <button class = "acceptbtn">accept</button>
+                </div>
+                </div>
+              
+              <div class="notCard">
+                <p>creditCard Application 5<Br /></p>
+                <p id = "show">show more info ....</p>
+                <!-- <div class="show">
+                  <p>show more info ....</p>
+                </div> -->
+                <div class="button-wrapper"> 
+                  <button class = "rejectbtn">reject</button>
+                  <button class = "acceptbtn">accept</button>
+                </div>
+                </div>
+              
+          </main>
+        </div>
+       </div>
+       
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+
+  document.getElementById("logout-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Perform the logout action or any other necessary tasks here
+    window.location.href = "login.html";
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu  | CodingLab </title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">AMY Bank</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="messages.html">
+          <i class='bx bx-chat' ></i>
+          <span class="links_name" >Messages</a></span>
+        </a>
+        <span class="tooltip">Messages</span>
+      </li>
+      <li>
+       <a href="user.html">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="img/profile.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Ahmed Yasser</div>
+             <div class="job">Bank Admin</div>
+           </div>
+         </div>
+         <a href="#" id="logout-link">
+          <i class='bx bx-log-out' id="log_out" ></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      
+    <div class="text">Dashboard - Admin</div>
+    <div class="bank-title">
+      <h1>AMY Bank</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed urna sit amet neque lobortis pharetra. Curabitur consequat, quam vel congue blandit, mauris tortor hendrerit tellus, eu scelerisque eros nisl sed felis. Morbi et sollicitudin dolor. Nam sit amet pharetra tortor. Fusce vel condimentum urna. Phasellus nec eleifend justo, at rhoncus elit. Sed ac hendrerit lectus, ac sollicitudin urna. Nulla sed nulla magna. Vivamus id finibus risus, vitae congue felis. Aenean finibus, ligula vitae ultricies tincidunt, mauris nisl malesuada dolor, nec lacinia odio quam vel leo.</p>
+
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container">
+        
+      <br>
+      <br>
+          <div class="send-container">
+            <h2 class="send-title">Notify</h2>
+            <div class="send-box">
+              <ul class="send-list">
+                <li>
+                  <label id= "to" for="recipient">To: </label>
+                  <input type="text" id="recipientName" placeholder="Client Username">
+                </li>
+                <li>
+                  <label for="subject">Subject:</label>
+                  <input type="text" id="subject" placeholder="Enter Subject">
+                </li>
+                <li>
+                  <label for="body">Body:</label>
+                  <textarea id="inputbody" rows="4" placeholder="Enter Message"></textarea>
+                </li>
+                <li>
+                  <button id="send-button">Send</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="announce-container">
+            <h2 class="announce-title">Announce</h2>
+            <div class="announce-box">
+              <ul class="announce-list">
+                <li>
+                  <label for="announce-subject">Subject:</label>
+                  <input type="text" id="announce-subject" placeholder="Enter Subject">
+                </li>
+                <li>
+                  <label for="announce-body">Body:</label>
+                  <textarea id="announce-body" rows="4" placeholder="Enter Message"></textarea>
+                </li>
+                <li>
+                  <button id="announce-send-button">Send</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="issue-container">
+            <h2 class="container-title">Technical Issues</h2>
+            <div class="issue-box">
+              <div class="issue-item">
+                <div class="issue-subject">Issue 1 Subject</div>
+                <div class="issue-username">Client Username</div>
+                <div class="status-box">
+                  <p>Status: <input type="checkbox" /></p>
+                </div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-subject">Issue 2 Subject</div>
+                <div class="issue-username">Client Username</div>
+                <div class="status-box">
+                  <p>Status: <input type="checkbox" /></p>
+                </div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-subject">Issue 3 Subject</div>
+                <div class="issue-username">Client Username</div>
+                <div class="status-box">
+                  <p>Status: <input type="checkbox" /></p>
+                </div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-subject">Issue 4 Subject</div>
+                <div class="issue-username">Client Username</div>
+                <div class="status-box">
+                  <p>Status: <input type="checkbox" /></p>
+                </div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-subject">Issue 5 Subject</div>
+                <div class="issue-username">Client Username</div>
+                <div class="status-box">
+                  <p>Status: <input type="checkbox" /></p>
+                </div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-subject">Issue 6 Subject</div>
+                <div class="issue-username">Client Username</div>
+                <div class="status-box">
+                  <p>Status: <input type="checkbox" /></p>
+                </div>
+              </div>
+              <!-- Add more issue items with status boxes as needed -->
+            </div>
+          </div>
+              
+            </div>
+          </div>
+  </section>
+  <script>
+ 
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+
+
+  var sendNot = document.getElementById("send-button");
+let clients = ["admin", "amgad"];
+
+sendNot.addEventListener("click", function() {
+  var username = document.getElementById("recipientName").value;
+  var myVariable = "To: ";
+
+  if (username === "" || username !== clients[0] && username !== clients[1]) {
+    myVariable = "To: This User wasn't found";
+    var emptyUser = document.getElementById("recipientName");
+    emptyUser.value = ""; // Clear the username input field
+    var bodyL = document.getElementById("inputbody");
+    bodyL.value = ""; // Clear the body input field
+    var sub = document.getElementById("subject");
+    sub.value = ""; // Clear the subject input field
+  } else {
+    myVariable += "Notification Sent to - " + username;
+    var emptyUser = document.getElementById("recipientName");
+    emptyUser.value = ""; // Clear the username input field
+    var bodyL = document.getElementById("inputbody");
+    bodyL.value = ""; // Clear the body input field
+    var sub = document.getElementById("subject");
+    sub.value = ""; // Clear the subject input field
+  }
+
+  var outputElement = document.getElementById("to");
+  outputElement.innerHTML = myVariable;
+});
+
+
+    document.getElementById("logout-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        // Perform the logout action or any other necessary tasks here
+        window.location.href = "login.html";
+      });
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+  
+</body>
+</html>

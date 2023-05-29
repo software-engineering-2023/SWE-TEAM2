@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Responsive Sidebar Menu | CodingLab</title>
+    <link rel="stylesheet" href="user.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">AMY Bank</div>
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search...">
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="messages.html">
+            <i class='bx bx-chat'></i>
+            <span class="links_name">Messages</span>
+          </a>
+          <span class="tooltip">Messages</span>
+        </li>
+        <li>
+          <a href="user.html">
+            <i class='bx bx-user'></i>
+            <span class="links_name">User</span>
+          </a>
+          <span class="tooltip">User</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img src="img/profile.png" alt="profileImg">
+            <div class="name_job">
+              <div class="name">Ahmed Yasser</div>
+              <div class="job">Bank Admin</div>
+            </div>
+          </div>
+          <a href="#" id="logout-link">
+            <i class='bx bx-log-out' id="log_out"></i>
+            <span class="links_name">Logout</span>
+          </a>
+          <span class="tooltip">Logout</span>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+        <div class="text">Profile - Admin</div>
+        <div class="bank-title">
+          <h1>AMY Bank</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed urna sit amet neque lobortis pharetra. Curabitur consequat, quam vel congue blandit, mauris tortor hendrerit tellus, eu scelerisque eros nisl sed felis. Morbi et sollicitudin dolor. Nam sit amet pharetra tortor. Fusce vel condimentum urna. Phasellus nec eleifend justo, at rhoncus elit. Sed ac hendrerit lectus, ac sollicitudin urna. Nulla sed nulla magna. Vivamus id finibus risus, vitae congue felis. Aenean finibus, ligula vitae ultricies tincidunt, mauris nisl malesuada dolor, nec lacinia odio quam vel leo.</p>
+        </div>
+        <div class="profile-details-container">
+          <div class="profile-information">
+            <div class="profile-picture">
+                <img src="img/profile.png" alt="profileImg">
+              </div>
+            <div class="profile-name">Full Name: Ahmed Yasser Ahmed Al-Taweel</div>
+            <div class="profile-dob">Date of Birth: 22nd Of April 2002</div>
+            <div class="profile-address">Address: New Cairo, Egypt</div>
+            <div class="profile-employment">Date of Employment: 1st Of January 2022</div>
+          </div>
+          
+        </div>
+      </section>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      let searchBtn = document.querySelector(".bx-search");
+
+      document.getElementById("logout-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        // Perform the logout action or any other necessary tasks here
+        window.location.href = "login.html";
+      });
+
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search icon
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+      });
+
+      // following are the code to change sidebar button(optional)
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the icons class
+        } else {
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the icons class
+        }
+      }
+    </script>
+  </body>
+</html>

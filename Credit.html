@@ -10,7 +10,8 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-        <div class="logo_name">Welcome Yousef</div>
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">AMY Bank</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -36,9 +37,9 @@
       <li>
         <a href="Credit.html">
           <i class='bx bxs-wallet-alt'></i>
-          <span class="links_name">CreditCard Pay Or View</span>
+          <span class="links_name">CreditCard Actions</span>
         </a>
-        <span class="tooltip">CreditCard Pay Or View</span>
+        <span class="tooltip">CreditCard Actions</span>
       </li>
       <li>
         <a href="./Transaction.html">
@@ -69,18 +70,11 @@
          <span class="tooltip">Notification</span>
       </li>
      <li>
-       <a href="./Remainder.html">
+       <a href="./Reminder.html">
         <i class='bx bxs-calendar'></i>
-         <span class="links_name">Remainder</span>
+         <span class="links_name">Reminder</span>
        </a>
-       <span class="tooltip">Remainder</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
+       <span class="tooltip">Reminder</span>
      </li>
      <li class="profile">
          <div class="profile-details">
@@ -99,19 +93,40 @@
     </ul>
   </div>
   <section class="home-section">
-    <div class="text">
-      <h1>Welcome to the Online Banking System</h1>
-      <p>
-        Our online banking system provides a convenient and secure way to manage your finances from anywhere, at any time. With our range of services, you can apply for credit cards, loans, and make transactions with ease.
-      </p>
-      <p>
-        Transfer money between accounts, access transaction history, and receive notifications about your account activity. Our user-friendly interface and advanced security features ensure a seamless and protected banking experience.
-      </p>
-      <p>
-        Take advantage of our online banking system to save time and effort, allowing you to focus on what matters most to you. Join us today and experience the benefits of modern banking at your fingertips.
-      </p>
+    <div class="inbox-container">
+      <h1>View Credit Card</h1>
+      <img src="./img/card.jpg" alt="Credit Image">
+      <div class="balance">Current Balance: $5000</div>
+      <div class="points">Credit Points: 230</div>
     </div>
+    <div class="inbox-container">
+        <h1>Redeem Point</h1>
+        <div class="redeem-description">Choose your redemption option:</div>
+        <select id="redeem-options">
+          <option value="cash-back">Cash Back</option>
+          <option value="travel-rewards">Travel Rewards</option>
+          <option value="gift-cards">Gift Cards</option>
+        </select>
+        <label for="redeem-amount">Redeem Amount:</label>
+        <input type="redeem-amount" id="redeem-amount" name="redeem-amount" required>
+
+        <button type="redeem-button">Redeem</button>
+      </div>
+
+      <div class="inbox-container">
+          <h1>Pay Bills</h1>
+          <div class="redeem-description">Choose the bill you want to pay:</div>
+          <select id="bill-options">
+            <option value="gas-bill">Gas Bill</option>
+            <option value="water-bill">Water Bill</option>
+            <option value="electricity-bill">Electricity Bill</option>
+            <option value="telephone-bill">Telephone Bill</option>
+          </select>
+          <input type="text" id="bill-amount" placeholder="Enter the amount to pay">
+          <button class="redeem-button">Pay Now</button>
+        </div>
   </section>
+  
   <script>
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");
@@ -135,6 +150,12 @@
      closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
    }
   }
+
+  document.getElementById("logout-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Perform the logout action or any other necessary tasks here
+    window.location.href = "login.html";
+  });
   </script>
 </body>
 </html>

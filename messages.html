@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu  | CodingLab </title>
+    <link rel="stylesheet" href="client.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">AMY Bank</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="dashboard.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-chat' ></i>
+          <span class="links_name">Messages</span>
+        </a>
+        <span class="tooltip">Messages</span>
+      </li>
+      <li>
+       <a href="user.html">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="img/profile.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Ahmed Yasser</div>
+             <div class="job">Bank Admin</div>
+           </div>
+         </div>
+         <a href="#" id="logout-link">
+          <i class='bx bx-log-out' id="log_out" ></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="inbox-container">
+      <h2 class="inbox-title">Inbox</h2>
+      <div class="inbox-box">
+      <label for="date-filter">Date:</label>
+      <select id="date-filter">
+      <option value="all">All</option>
+      <option value="today">Today</option>
+      <option value="this-week">This Week</option>
+      <option value="this-month">This Month</option>
+      <option value="this-year">This Year</option>
+      </select>
+
+      <label for="Subject-filter">Subject:</label>
+      <select id="Subject-filter">
+      <option value="all">All</option>
+      <option value="issue resolution">Issue Resolution</option>
+      <option value="bank announcements">Bank Announcements</option>
+      <option value="others">Others</option>
+      </select>
+
+      <label for="importance-filter">Importance:</label>
+      <select id="importance-filter">
+      <option value="all">All</option>
+      <option value="high">High</option>
+      <option value="low">Low</option>
+      </select>
+
+      <ul>
+      <li>Notification 1</li>
+      <li>Notification 2</li>
+      <li>Notification 3</li>
+      <li>Notification 4</li>
+      <li>Notification 5</li>
+      <li>Notification 6</li>
+      </ul>
+      </div>
+      </div>
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+
+  document.getElementById("logout-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        // Perform the logout action or any other necessary tasks here
+        window.location.href = "login.html";
+      });
+  </script>
+  
+</body>
+</html>

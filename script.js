@@ -56,9 +56,15 @@ function redirectToHomePage() {
   
       // Check if the username and password match
       if (username === 'yousef' && password === '1234') {
-        // Redirect to the client page
-        window.location.href = 'client.html';
-      } else {
+          window.location.href = 'client.html';
+      }
+      else if (username === 'ahmed' && password === '1234') {
+          window.location.href = 'dashboard.html';
+      } 
+      else if(username === 'mohamed' && password === '1234'){
+          window.location.href = 'bankerHome.html';
+      }
+      else {
         alert('Invalid username or password. Please try again.');
       }
     });

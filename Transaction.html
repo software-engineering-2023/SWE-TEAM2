@@ -10,7 +10,8 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-        <div class="logo_name">Welcome Yousef</div>
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">AMY Bank</div>
         <i class='bx bx-menu' id="btn" ></i>
     </div>
     <ul class="nav-list">
@@ -36,9 +37,9 @@
       <li>
         <a href="Credit.html">
           <i class='bx bxs-wallet-alt'></i>
-          <span class="links_name">CreditCard Pay Or View</span>
+          <span class="links_name">CreditCard Actions</span>
         </a>
-        <span class="tooltip">CreditCard Pay Or View</span>
+        <span class="tooltip">CreditCard Actions</span>
       </li>
       <li>
         <a href="./Transaction.html">
@@ -69,18 +70,11 @@
          <span class="tooltip">Notification</span>
       </li>
      <li>
-       <a href="./Remainder.html">
+       <a href="./Reminder.html">
         <i class='bx bxs-calendar'></i>
-         <span class="links_name">Remainder</span>
+         <span class="links_name">Reminder</span>
        </a>
-       <span class="tooltip">Remainder</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
+       <span class="tooltip">Reminder</span>
      </li>
      <li class="profile">
          <div class="profile-details">
@@ -139,8 +133,6 @@
       cardholderName: "Yousef Ebrahem Badr",
       transactionAmount: "$50.00",
       transactionDate: "May 15, 2023",
-      merchantInformation: "ABC Electronics",
-      mcc: "5732",
       authorizationCode: "345678",
       cardExpirationDate: "09/25",
       cvv: "123",
@@ -151,11 +143,9 @@
       cardholderName: "Yousef Ebrahem Badr",
       transactionAmount: "$75.50",
       transactionDate: "June 2, 2023",
-      merchantInformation: "XYZ Clothing Boutique",
-      mcc: "5651",
-      authorizationCode: "987654",
-      cardExpirationDate: "12/24",
-      cvv: "456",
+      authorizationCode: "345678",
+      cardExpirationDate: "09/25",
+      cvv: "123",
     },
     {
       transactionNumber: "Transaction 3",
@@ -163,11 +153,9 @@
       cardholderName: "Yousef Ebrahem Badr",
       transactionAmount: "$30.25",
       transactionDate: "July 10, 2023",
-      merchantInformation: "Gourmet Delights",
-      mcc: "5812",
-      authorizationCode: "234567",
-      cardExpirationDate: "03/26",
-      cvv: "789",
+      authorizationCode: "345678",
+      cardExpirationDate: "09/25",
+      cvv: "123",
     },
   ];
 
@@ -212,8 +200,6 @@
           <p><strong>Cardholder's Name:</strong> ${transaction.cardholderName}</p>
           <p><strong>Transaction Amount:</strong> ${transaction.transactionAmount}</p>
           <p><strong>Transaction Date:</strong> ${transaction.transactionDate}</p>
-          <p><strong>Merchant Information:</strong> ${transaction.merchantInformation}</p>
-          <p><strong>Merchant Category Code (MCC):</strong> ${transaction.mcc}</p>
           <p><strong>Authorization Code:</strong> ${transaction.authorizationCode}</p>
           <p><strong>Card Expiration Date:</strong> ${transaction.cardExpirationDate}</p>
           <p><strong>CVV/CVC:</strong> ${transaction.cvv}</p>
