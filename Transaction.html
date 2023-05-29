@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu  | Client page </title>
+    <link rel="stylesheet" href="client.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Welcome Yousef</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="./ApplyCredit.html">
+          <i class='bx bx-credit-card'></i>
+          <span class="links_name">Apply for CreditCard</span>
+        </a>
+         <span class="tooltip">Apply for CreditCard</span>
+      </li>
+      <li>
+        <a href="./ApplyLoan.html">
+          <i class='bx bx-money'></i>
+          <span class="links_name">Apply for Loan</span>
+        </a>
+         <span class="tooltip">Apply for Loan</span>
+      </li>
+      <li>
+        <a href="Credit.html">
+          <i class='bx bxs-wallet-alt'></i>
+          <span class="links_name">CreditCard Pay Or View</span>
+        </a>
+        <span class="tooltip">CreditCard Pay Or View</span>
+      </li>
+      <li>
+        <a href="./Transaction.html">
+          <i class='bx bx-receipt'></i>
+          <span class="links_name">Transactions</span>
+        </a>
+         <span class="tooltip">Transactions</span>
+      </li>
+      <li>
+        <a href="./Transfer.html">
+          <i class='bx bx-transfer-alt'></i>
+          <span class="links_name">Transfer Money</span>
+        </a>
+         <span class="tooltip">Transfer Money</span>
+      </li>
+      <li>
+        <a href="./Report.html">
+          <i class='bx bxs-report'></i>
+          <span class="links_name">Report</span>
+        </a>
+         <span class="tooltip">Report</span>
+      </li>
+      <li>
+        <a href="./Notification.html">
+          <i class='bx bxs-bell'></i>
+          <span class="links_name">Notification</span>
+        </a>
+         <span class="tooltip">Notification</span>
+      </li>
+     <li>
+       <a href="./Remainder.html">
+        <i class='bx bxs-calendar'></i>
+         <span class="links_name">Remainder</span>
+       </a>
+       <span class="tooltip">Remainder</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="./img/client.jpg" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Yousef Badr</div>
+             <div class="job">Client</div>
+           </div>
+         </div>
+         <a href="#" id="logout-link">
+          <i class='bx bx-log-out' id="log_out" ></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+     <div class="top-center">
+        <h1>Transactions</h1>
+        <div class="transaction-choice">
+          <button id="credit-card-transactions">Credit Card Transactions</button>
+          <button id="bank-account-transactions">Bank Account Transactions</button>
+        </div>
+        <div id="transactionContent"></div>
+      </div>
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+
+  const creditCardTransactions = [
+    {
+      transactionNumber: "Transaction 1",
+      creditCardNumber: "5975 2145 9854 2485",
+      cardholderName: "Yousef Ebrahem Badr",
+      transactionAmount: "$50.00",
+      transactionDate: "May 15, 2023",
+      merchantInformation: "ABC Electronics",
+      mcc: "5732",
+      authorizationCode: "345678",
+      cardExpirationDate: "09/25",
+      cvv: "123",
+    },
+    {
+      transactionNumber: "Transaction 2",
+      creditCardNumber: "5975 2145 9854 2485",
+      cardholderName: "Yousef Ebrahem Badr",
+      transactionAmount: "$75.50",
+      transactionDate: "June 2, 2023",
+      merchantInformation: "XYZ Clothing Boutique",
+      mcc: "5651",
+      authorizationCode: "987654",
+      cardExpirationDate: "12/24",
+      cvv: "456",
+    },
+    {
+      transactionNumber: "Transaction 3",
+      creditCardNumber: "5975 2145 9854 2485",
+      cardholderName: "Yousef Ebrahem Badr",
+      transactionAmount: "$30.25",
+      transactionDate: "July 10, 2023",
+      merchantInformation: "Gourmet Delights",
+      mcc: "5812",
+      authorizationCode: "234567",
+      cardExpirationDate: "03/26",
+      cvv: "789",
+    },
+  ];
+
+  const bankAccountTransactions = [
+    {
+      transactionNumber: "Transaction 1",
+      transactionDate: "May 1, 2023",
+      transactionType: "Deposit",
+      transactionAmount: "$500.00",
+      transactionDescription: "Salary deposit",
+      accountBalance: "$2,500.00",
+      transactionReferenceNumber: "123456789",
+    },
+    {
+      transactionNumber: "Transaction 2",
+      transactionDate: "May 10, 2023",
+      transactionType: "Withdrawal",
+      transactionAmount: "$100.00",
+      transactionDescription: "ATM cash withdrawal",
+      accountBalance: "$2,400.00",
+      transactionReferenceNumber: "987654321",
+    },
+    {
+      transactionNumber: "Transaction 3",
+      transactionDate: "May 20, 2023",
+      transactionType: "Transfer",
+      transactionAmount: "$200.00",
+      transactionDescription: "Transfer to Account 3454-2634-9124-1234",
+      accountBalance: "$2,200.00",
+      transactionReferenceNumber: "456789012",
+    },
+  ];
+
+
+  document.getElementById("credit-card-transactions").addEventListener("click", function () {
+    let htmlContent = "";
+    for (const transaction of creditCardTransactions) {
+      const transactionHTML = `
+        <div class="transaction-item">
+          <h2>${transaction.transactionNumber}</h2>
+          <p><strong>Credit Card Number:</strong> ${transaction.creditCardNumber}</p>
+          <p><strong>Cardholder's Name:</strong> ${transaction.cardholderName}</p>
+          <p><strong>Transaction Amount:</strong> ${transaction.transactionAmount}</p>
+          <p><strong>Transaction Date:</strong> ${transaction.transactionDate}</p>
+          <p><strong>Merchant Information:</strong> ${transaction.merchantInformation}</p>
+          <p><strong>Merchant Category Code (MCC):</strong> ${transaction.mcc}</p>
+          <p><strong>Authorization Code:</strong> ${transaction.authorizationCode}</p>
+          <p><strong>Card Expiration Date:</strong> ${transaction.cardExpirationDate}</p>
+          <p><strong>CVV/CVC:</strong> ${transaction.cvv}</p>
+        </div>
+      `;
+      htmlContent += transactionHTML;
+    }
+    transactionContent.innerHTML = htmlContent;
+  });
+
+  document.getElementById("bank-account-transactions").addEventListener("click", function () {
+    let htmlContent = "";
+    for (const transaction of bankAccountTransactions) {
+      const transactionHTML = `
+        <div class="transaction-item">
+          <h2>${transaction.transactionNumber}</h2>
+          <p><strong>Transaction Date:</strong> ${transaction.transactionDate}</p>
+          <p><strong>Transaction Type:</strong> ${transaction.transactionType}</p>
+          <p><strong>Transaction Amount:</strong> ${transaction.transactionAmount}</p>
+          <p><strong>Transaction Description:</strong> ${transaction.transactionDescription}</p>
+          <p><strong>Account Balance:</strong> ${transaction.accountBalance}</p>
+          <p><strong>Transaction Reference Number:</strong> ${transaction.transactionReferenceNumber}</p>
+        </div>
+      `;
+        htmlContent += transactionHTML;
+      }
+      transactionContent.innerHTML = htmlContent;
+     });   
+
+  document.getElementById("logout-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Perform the logout action or any other necessary tasks here
+    window.location.href = "login.html";
+  });
+  </script>
+</body>
+</html>

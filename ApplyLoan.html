@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu  | Client page </title>
+    <link rel="stylesheet" href="client.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Welcome Yousef</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="./ApplyCredit.html">
+          <i class='bx bx-credit-card'></i>
+          <span class="links_name">Apply for CreditCard</span>
+        </a>
+         <span class="tooltip">Apply for CreditCard</span>
+      </li>
+      <li>
+        <a href="./ApplyLoan.html">
+          <i class='bx bx-money'></i>
+          <span class="links_name">Apply for Loan</span>
+        </a>
+         <span class="tooltip">Apply for Loan</span>
+      </li>
+      <li>
+        <a href="Credit.html">
+          <i class='bx bxs-wallet-alt'></i>
+          <span class="links_name">CreditCard Pay Or View</span>
+        </a>
+        <span class="tooltip">CreditCard Pay Or View</span>
+      </li>
+      <li>
+        <a href="./Transaction.html">
+          <i class='bx bx-receipt'></i>
+          <span class="links_name">Transactions</span>
+        </a>
+         <span class="tooltip">Transactions</span>
+      </li>
+      <li>
+        <a href="./Transfer.html">
+          <i class='bx bx-transfer-alt'></i>
+          <span class="links_name">Transfer Money</span>
+        </a>
+         <span class="tooltip">Transfer Money</span>
+      </li>
+      <li>
+        <a href="./Report.html">
+          <i class='bx bxs-report'></i>
+          <span class="links_name">Report</span>
+        </a>
+         <span class="tooltip">Report</span>
+      </li>
+      <li>
+        <a href="./Notification.html">
+          <i class='bx bxs-bell'></i>
+          <span class="links_name">Notification</span>
+        </a>
+         <span class="tooltip">Notification</span>
+      </li>
+     <li>
+       <a href="./Remainder.html">
+        <i class='bx bxs-calendar'></i>
+         <span class="links_name">Remainder</span>
+       </a>
+       <span class="tooltip">Remainder</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="./img/client.jpg" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Yousef Badr</div>
+             <div class="job">Client</div>
+           </div>
+         </div>
+         <a href="#" id="logout-link">
+          <i class='bx bx-log-out' id="log_out" ></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+          <form>
+            <h1>Apply for Loan</h1>
+            <div class="label-container">
+            <label for="loan">Loan:</label>
+            </div>
+            <select id="loan" name="loan" required>
+            <option value="personal">Personal</option>
+            <option value="car">Car</option>
+            <option value="other">Other</option>
+            </select>
+
+            <label for="loan-amount">Loan Amount:</label>
+            <input type="text" id="loan-amount" name="loan-amount" required>
+
+            <label for="annual-income">Annual Income:</label>
+            <input type="text" id="annual-income" name="annual-income" required>
+
+            <label for="loan-purpose">What will the loan be used for:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="birth-date">Birth Date:</label>
+            <input type="text" id="birth-date" name="birth-date" required>
+
+            <label for="phone-number">Phone Number:</label>
+            <input type="text" id="phone-number" name="phone-number" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+
+
+  document.getElementById("logout-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Perform the logout action or any other necessary tasks here
+    window.location.href = "login.html";
+  });
+  </script>
+</body>
+</html>
